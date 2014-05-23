@@ -44,8 +44,12 @@ def format_output(ls, out):
 def sort_list(fs=None, out=None):
     # No command line arguments or bad arguments, set defaults
     if not fs or not os.path.exists(fs):
+        print ("No input file specified, using default: %s/plp_phase1_p3_in.txt"
+                % os.path.dirname(os.path.abspath(__file__)))
         fs = 'plp_phase1_p3_in.txt'
     if not out:
+        print ("No output file specified, using default: %s/plp_phase1_p3_out.txt"
+                % os.path.dirname(os.path.abspath(__file__)))
         out = 'plp_phase1_p3_out.txt'
 
     ls = parse_input(fs)
